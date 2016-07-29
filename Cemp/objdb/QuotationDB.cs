@@ -5,7 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+/*
+ * 58.01.13.01  คุณกรณ์ แจ้งขอแก้ไข     หน้าView ให้กรองปี 
+ * 59.07.29.01  คุณกรณ์แจ้งว่า save ไม่แสดง แต่check ดูแล้ว เลขที่เอกสาร "000" เต็ม แก้ไข เพิ่ม "0000" คิดว่าพอ
+ 
+ * */
 namespace Cemp.objdb
 {
     public class QuotationDB
@@ -158,6 +162,23 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public DataTable selectAll(String YearId)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            //if (YearId.Equals(""))
+            //{
+            //    sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
+            //}
+            //else
+            //{
+                sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' and " + qu.YearId + "='" + YearId + "' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
+            //}
+            
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectQuoConfirmNoMOU()
         {
             String sql = "";
@@ -289,6 +310,15 @@ namespace Cemp.objdb
                 " Where qu." + qu.Id + "='" + quId + "'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectYearId()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + qu.YearId + " From " + qu.table + " Where " + qu.Active + "='1'";
+            dt = conn.selectData(sql);
 
             return dt;
         }
@@ -449,7 +479,8 @@ namespace Cemp.objdb
                 qu.Remark4 + "='" + p.Remark4 + "', " +
                 qu.Remark5 + "='" + p.Remark5 + "', " +
                 qu.Remark6 + "='" + p.Remark6 + "', " +
-                qu.Remark7 + "='" + p.Remark7 + "' " +
+                qu.Remark7 + "='" + p.Remark7 + "', " +
+                qu.YearId + "='" + p.YearId + "' " +            //58.01.13.01 +
                 "Where " + qu.pkField + "='" + p.Id + "'";
             try
             {
@@ -572,8 +603,10 @@ namespace Cemp.objdb
                 sql = "Select count(" + qu.QuoNumber + ") as cnt From " + qu.table ;
                 dt = conn.selectData(sql);
                 doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
-                doc = "000" + doc;
-                doc = doc.Substring(doc.Length - 3);
+                //doc = "000" + doc; 59.07.29.01  -1
+                //doc = doc.Substring(doc.Length - 3);//59.07.29.01  -1
+                doc = "0000" + doc;//59.07.29.01  +1
+                doc = doc.Substring(doc.Length - 4);//59.07.29.01 +1
                 cnt = "1";
                 //doc = "00001";
             }
@@ -682,6 +715,22 @@ namespace Cemp.objdb
                 //c.Items.Add(new );
             }
             //c.SelectedItem = item;
+            return c;
+        }
+        public ComboBox getCboYear(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectYearId();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qu.YearId].ToString();
+                item.Text = dt.Rows[i][qu.YearId].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            c.Text = System.DateTime.Now.Year.ToString();
             return c;
         }
         public String getYear()

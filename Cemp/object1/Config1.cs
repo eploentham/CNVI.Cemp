@@ -18,6 +18,15 @@ namespace Cemp.object1
             c.SelectedIndex = c.FindStringExact( String.Concat(System.DateTime.Now.Year+543));
             return c;
         }
+        public ComboBox setCboYear1(ComboBox c)
+        {
+            c.Items.Clear();
+            c.Items.Add(System.DateTime.Now.Year );
+            c.Items.Add(System.DateTime.Now.Year - 1);
+            c.Items.Add(System.DateTime.Now.Year - 2);
+            c.SelectedIndex = c.FindStringExact(String.Concat(System.DateTime.Now.Year ));
+            return c;
+        }
         public ComboBox setCboMonth(ComboBox c)
         {
             c.Items.Clear();

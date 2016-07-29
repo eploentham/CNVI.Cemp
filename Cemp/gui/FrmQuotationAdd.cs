@@ -14,6 +14,9 @@ using System.Windows.Forms;
  * 57.12.09.03  อุยแจ้งว่า ตรงเบอร์โทรขอพนักงาน ให้แสดงเป็นเบอร์ มือถือ
  * 57.12.17.01 
  * 57.12.19.01  Bug พอแก้ไข แล้วจะเป็นการเพิ่ม record ใหม่
+ * 58.01.13.01  คุณกรณ์ แจ้งขอแก้ไข     หน้าView ให้กรองปี
+ * 58.01.13.02  เปาแจ้งว่า หน้าจอใบเสนอราคา อยากให้สามารถcopy จากใบเสนอราคาใบอื่น มาใช้งานได้
+ * 59.07.29.01  คุณกรณ์แจ้งว่า save ไม่แสดง แต่check ดูแล้ว เลขที่เอกสาร "000" เต็ม แก้ไข เพิ่ม "0000" คิดว่าพอ
  * */
 
 namespace Cemp.gui
@@ -26,14 +29,15 @@ namespace Cemp.gui
         int colRow = 0, colItemCode=1, colItem = 2, colMethod = 3, colQty = 4, colPriceCost=5, colPriceSale = 6, colAmount = 7, colId=8, colDel=9, colItemId=10, colMethodId=11, colEdit=12;
         int colCnt = 13;
         String oldNetTotal = "";
-        Boolean pageLoad = false, flagViewCost=false;
+        Boolean pageLoad = false, flagViewCost = false, flagNewCopy = false;
         //NumberFormat fmt = NumberFormat.getCurrencyInstance();
-        public FrmQuotationAdd(String quId, Boolean flagViewCost1, CnviControl c)
+        public FrmQuotationAdd(String quId, Boolean flagViewCost1, Boolean flagNewCopy1, CnviControl c)
         {            
             InitializeComponent();
             label41.Text = System.DateTime.Now.ToLongTimeString();
             cc = c;
             flagViewCost=flagViewCost1;
+            flagNewCopy = flagNewCopy1;
             initConfig(quId);
             label42.Text = System.DateTime.Now.ToLongTimeString();
         }
@@ -118,17 +122,45 @@ namespace Cemp.gui
             txtDiscount.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Discount)));
             txtNetTotal.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.NetTotal)));
             txtPlus1.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Plus1)));
-            txtQuId.Text = qu.Id;
-            txtQuNumber.Text = qu.QuoNumber+"-"+qu.QuoNumberCnt;
-            txtStaffEmail.Text = qu.StaffEmail;
-            txtStaffTel.Text = qu.StaffTel;
-            txtStaffId.Text = qu.StaffId;
-            cboStaff.Text = qu.StaffName;
+            if (flagNewCopy)
+            {
+                txtQuId.Text = "";
+                dtpDateQu.Value = DateTime.Now;
+            }
+            else
+            {
+                txtQuId.Text = qu.Id;
+                txtQuNumber.Text = qu.QuoNumber + "-" + qu.QuoNumberCnt;
+                cboStaffApprove.Text = qu.StaffApproveName;
+                txtStaffApproveId.Text = qu.StaffApproveId;
+                txtStaffEmail.Text = qu.StaffEmail;
+                txtStaffTel.Text = qu.StaffTel;
+                txtStaffId.Text = qu.StaffId;
+                cboStaff.Text = qu.StaffName;
+                try
+                {
+                    if (!qu.QuoDate.Equals(""))
+                    {
+                        dtpDateQu.Value = DateTime.Parse(cc.cf.dateDBtoShow1(qu.QuoDate));
+                    }
+                    else
+                    {
+                        dtpDateQu.Value = DateTime.Now;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    dtpDateQu.Value = DateTime.Parse(cc.cf.dateDBtoShow(qu.QuoDate));
+                }
+            }
+            
+            
+            
             txtTotal.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Total)));
             txtVat.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Vat)));
             txtVatRate.Text = qu.VatRate;
-            cboStaffApprove.Text = qu.StaffApproveName;
-            txtStaffApproveId.Text = qu.StaffApproveId;
+            
 
             //txtLine1.Text = qu.Line1;
             txtLine2.Text = qu.Line2;
@@ -144,24 +176,7 @@ namespace Cemp.gui
             cboRemark4.Text = qu.Remark4;
             cboRemark5.Text = qu.Remark5;
             cboRemark6.Text = qu.Remark6;
-            cboRemark7.Text = qu.Remark7;
-            try
-            {
-                if (!qu.QuoDate.Equals(""))
-                {
-                    dtpDateQu.Value = DateTime.Parse(cc.cf.dateDBtoShow1(qu.QuoDate));
-                }
-                else
-                {
-                    dtpDateQu.Value = DateTime.Now;
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                dtpDateQu.Value = DateTime.Parse(cc.cf.dateDBtoShow(qu.QuoDate));
-            }
-            
+            cboRemark7.Text = qu.Remark7;            
 
             if (qu.Id.Equals(""))
             {
@@ -244,6 +259,8 @@ namespace Cemp.gui
             //qu.StatusQuo = "1";
             qu.userCreate = cc.sf.Id;
             qu.userModi = cc.sf.Id;
+
+            qu.YearId = dtpDateQu.Value.Year.ToString();       //58.01.13.01 +
         }
         private void setGrd(String quId)
         {
@@ -473,11 +490,15 @@ namespace Cemp.gui
         {
             Boolean chkdel = false;
             String quId = "";
-            if (txtQuNumber.Text.Equals(""))
+            if (!flagNewCopy)           //58.01.13.02 +
             {
-                MessageBox.Show("ไม่มีเลขที่ Quotation", "ป้อนข้อมูลไม่ครบ");
-                return;
+                if (txtQuNumber.Text.Equals(""))
+                {
+                    MessageBox.Show("ไม่มีเลขที่ Quotation", "ป้อนข้อมูลไม่ครบ");
+                    return;
+                }
             }
+            
             if (cboComp.Text.Equals(""))
             {
                 MessageBox.Show("ไม่มี ชื่อบริษัท", "ป้อนข้อมูลไม่ครบ");
@@ -563,9 +584,12 @@ namespace Cemp.gui
                     {
                         continue;
                     }
-                    if (dgvAdd[colEdit, i].Value.ToString().Equals(""))
+                    if (!flagNewCopy)       //58.01.13.02 +
                     {
-                        continue;
+                        if (dgvAdd[colEdit, i].Value.ToString().Equals(""))
+                        {
+                            continue;
+                        }
                     }
                     QuotationItem qui = new QuotationItem();
                     //Item it = cc.itdb.selectByPk(dgvAdd[colItemId, i].Value.ToString());
