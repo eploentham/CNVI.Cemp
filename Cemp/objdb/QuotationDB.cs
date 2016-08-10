@@ -172,9 +172,40 @@ namespace Cemp.objdb
             //}
             //else
             //{
-                sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' and " + qu.YearId + "='" + YearId + "' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
+                sql = "Select * From " + qu.table + 
+                " Where " + qu.Active + "='1' and " + qu.YearId + "='" + YearId + 
+                "' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
             //}
             
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectAll(String YearId, String custName, String contact)
+        {
+            String sql = "";
+            String wherecontact = "";
+            String wherecust = "";
+            if (!contact.Equals(""))
+            {
+                wherecontact = " and " + qu.ContactName + " like '" + contact + "%' ";
+            }
+            if (!custName.Equals(""))
+            {
+                wherecust = " and " + qu.CustName + " like '" + custName + "%' ";
+            }
+            DataTable dt = new DataTable();
+            //if (YearId.Equals(""))
+            //{
+            //    sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
+            //}
+            //else
+            //{
+            sql = "Select * From " + qu.table +
+            " Where " + qu.Active + "='1' and " + qu.YearId + "='" + YearId+"' " + wherecust + wherecontact +
+            " Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
+            //}
+
             dt = conn.selectData(sql);
 
             return dt;
@@ -256,6 +287,25 @@ namespace Cemp.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select Distinct " + qu.Remark7 + " From " + qu.table + " Where " + qu.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectDistinctContact(String custName,String contact)
+        {
+            String sql = "";
+            String wherecontact = "";
+            String wherecust = "";
+            if (!contact.Equals(""))
+            {
+                wherecontact = " and "+qu.ContactName+" like '%"+contact+"%' ";
+            }
+            if (!custName.Equals(""))
+            {
+                wherecust = " and " + qu.CustName + " like '%" + custName + "%' ";
+            }
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + qu.ContactName + " From " + qu.table + " Where " + qu.Active + "='1'"+ wherecust + wherecontact;
             dt = conn.selectData(sql);
 
             return dt;
@@ -711,6 +761,22 @@ namespace Cemp.objdb
                 item = new ComboBoxItem();
                 item.Value = dt.Rows[i][qu.Remark7].ToString();
                 item.Text = dt.Rows[i][qu.Remark7].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public ComboBox getCbocontact(ComboBox c, String custName, String contact)
+        {
+            c.Items.Clear();
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctContact(custName, contact);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qu.ContactName].ToString();
+                item.Text = dt.Rows[i][qu.ContactName].ToString();
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }

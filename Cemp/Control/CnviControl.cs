@@ -215,7 +215,13 @@ namespace Cemp.Control
             initC.quoLine5 = iniFile.Read("quotationline5");
             initC.quoLine6 = iniFile.Read("quotationline6");
 
+            initC.grdQuoColor = iniFile.Read("gridquotationcolor");
+
             initC.HideCostQuotation = iniFile.Read("hidecostquotation");
+            if (initC.grdQuoColor.Equals(""))
+            {
+                initC.grdQuoColor = "#b7e1cd";
+            }
             //initC.Password = regE.getPassword();
         }
         public void SetPathImage(String path)

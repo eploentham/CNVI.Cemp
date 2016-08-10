@@ -17,6 +17,7 @@ using System.Windows.Forms;
  * 58.01.13.01  คุณกรณ์ แจ้งขอแก้ไข     หน้าView ให้กรองปี
  * 58.01.13.02  เปาแจ้งว่า หน้าจอใบเสนอราคา อยากให้สามารถcopy จากใบเสนอราคาใบอื่น มาใช้งานได้
  * 59.07.29.01  คุณกรณ์แจ้งว่า save ไม่แสดง แต่check ดูแล้ว เลขที่เอกสาร "000" เต็ม แก้ไข เพิ่ม "0000" คิดว่าพอ
+ * 59.08.09.01  คุณกรณ์ แจ้งแก้ไข เพิ่มการค้นหา
  * */
 
 namespace Cemp.gui
@@ -349,7 +350,8 @@ namespace Cemp.gui
                     dgvAdd[colEdit, i].Value = "";
                     if ((i % 2) != 0)
                     {
-                        dgvAdd.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                        //dgvAdd.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                        dgvAdd.Rows[i].DefaultCellStyle.BackColor = ColorTranslator.FromHtml(cc.initC.grdQuoColor);//59.08.09.01 +
                     }
                 }
             }

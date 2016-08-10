@@ -106,7 +106,6 @@ C:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.Properties.Resources.resources
 C:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.csproj.GenerateResource.Cache
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuotationEx.resources
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmResultAdd1.resources
-D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
 D:\source\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 D:\source\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.ReportSource.dll
 D:\source\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.Shared.dll

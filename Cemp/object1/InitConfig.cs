@@ -9,6 +9,6 @@ namespace Cemp.object1
     {
         public String clearInput = "", connectDatabaseServer = "", ServerIP = "", User = "", Password = "", Database = "", PathData = "", delImage = "", pathImageLogo = "";
         public String StatusServer = "", pathShareImage = "", NameShareData = "", use32Bit="", PathReport="";
-        public String quoLine1 = "", quoLine2 = "", quoLine3 = "", quoLine4 = "", quoLine5 = "", quoLine6 = "", HideCostQuotation="", ConnectShareData="", IPServer="";
+        public String quoLine1 = "", quoLine2 = "", quoLine3 = "", quoLine4 = "", quoLine5 = "", quoLine6 = "", HideCostQuotation="", ConnectShareData="", IPServer="", grdQuoColor="";
     }
 }
