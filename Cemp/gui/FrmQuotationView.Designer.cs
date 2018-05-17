@@ -46,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
             this.pB1 = new System.Windows.Forms.ProgressBar();
+            this.chkApprove = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +172,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkApprove);
             this.groupBox1.Controls.Add(this.cboContact);
             this.groupBox1.Controls.Add(this.cboCust);
             this.groupBox1.Controls.Add(this.label6);
@@ -245,6 +247,16 @@
             this.pB1.Size = new System.Drawing.Size(215, 23);
             this.pB1.TabIndex = 16;
             // 
+            // chkApprove
+            // 
+            this.chkApprove.AutoSize = true;
+            this.chkApprove.Location = new System.Drawing.Point(18, 46);
+            this.chkApprove.Name = "chkApprove";
+            this.chkApprove.Size = new System.Drawing.Size(89, 17);
+            this.chkApprove.TabIndex = 13;
+            this.chkApprove.Text = "อนุมัติแล้ว     ";
+            this.chkApprove.UseVisualStyleBackColor = true;
+            // 
             // FrmQuotationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,5 +308,6 @@
         private System.Windows.Forms.ComboBox cboCust;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.ProgressBar pB1;
+        private System.Windows.Forms.CheckBox chkApprove;
     }
 }

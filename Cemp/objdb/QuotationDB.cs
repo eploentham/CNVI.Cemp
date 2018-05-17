@@ -8,7 +8,7 @@ using System.Windows.Forms;
 /*
  * 58.01.13.01  คุณกรณ์ แจ้งขอแก้ไข     หน้าView ให้กรองปี 
  * 59.07.29.01  คุณกรณ์แจ้งว่า save ไม่แสดง แต่check ดูแล้ว เลขที่เอกสาร "000" เต็ม แก้ไข เพิ่ม "0000" คิดว่าพอ
- 
+ * 61.05.17.01  คุณกรณ์ แจ้งแก้ไข ให้สามารถ กรอง ข้อมูลที่อนุมัติได้
  * */
 namespace Cemp.objdb
 {
@@ -203,6 +203,39 @@ namespace Cemp.objdb
             //{
             sql = "Select * From " + qu.table +
             " Where " + qu.Active + "='1' and " + qu.YearId + "='" + YearId+"' " + wherecust + wherecontact +
+            " Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
+            //}
+
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        /*
+         * 61.05.17.01 +
+         */
+        public DataTable selectAllByApprove(String YearId, String custName, String contact)
+        {
+            String sql = "";
+            String wherecontact = "";
+            String wherecust = "", wherequo="";
+            if (!contact.Equals(""))
+            {
+                wherecontact = " and " + qu.ContactName + " like '" + contact + "%' ";
+            }
+            if (!custName.Equals(""))
+            {
+                wherecust = " and " + qu.CustName + " like '" + custName + "%' ";
+            }
+            wherequo = " and "+qu.StaffApproveId + " = '2' ";
+            DataTable dt = new DataTable();
+            //if (YearId.Equals(""))
+            //{
+            //    sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
+            //}
+            //else
+            //{
+            sql = "Select * From " + qu.table +
+            " Where " + qu.Active + "='1' and " + qu.YearId + "='" + YearId + "' " + wherecust + wherecontact + wherequo +
             " Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
             //}
 

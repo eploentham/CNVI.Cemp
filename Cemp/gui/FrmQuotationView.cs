@@ -16,6 +16,7 @@ namespace Cemp.gui
      * 59.08.08.01  คุณกรณ์ แจ้งแก้ไข สีของgrid
      * 59.08.08.02  คุณกรณ์ แจ้งแก้ไข เพิ่มการแสดง ยอดรวม ให้อยู่นอกgrid
      * 59.08.08.03  คุณกรณ์ แจ้งแก้ไข เพิ่มการค้นหา
+     * 61.05.17.01  คุณกรณ์ แจ้งแก้ไข ให้สามารถ กรอง ข้อมูลที่อนุมัติได้
      * */
     public partial class FrmQuotationView : Form
     {
@@ -59,7 +60,16 @@ namespace Cemp.gui
             pB1.Show();
             Double net = 0, netwait=0, netapprove=0;     //58.01.22.01 +
             DataTable dt = new DataTable();
-            dt = cc.qudb.selectAll(cboYear.Text, cboCust.Text, cboContact.Text);
+            //61.05.17.01 +
+            if (chkApprove.Checked)
+            {
+                dt = cc.qudb.selectAllByApprove(cboYear.Text, cboCust.Text, cboContact.Text);
+            }
+            else
+            {
+                dt = cc.qudb.selectAll(cboYear.Text, cboCust.Text, cboContact.Text);
+            }
+            //dt = cc.qudb.selectAll(cboYear.Text, cboCust.Text, cboContact.Text);      //61.05.17.01 -
             dgvView.Rows.Clear();
             dgvView.ColumnCount = colCnt;
 
@@ -367,11 +377,11 @@ namespace Cemp.gui
             {
                 setGrd();
             }
-            
         }
 
         private void btnNewCopy_Click(object sender, EventArgs e)       //58.01.13.02 +
         {
+            if (dgvView[colId, dgvView.CurrentCell.RowIndex].Value == null) return;
             FrmQuotationAdd frm = new FrmQuotationAdd(dgvView[colId, dgvView.CurrentCell.RowIndex].Value.ToString(), false, true, cc);
             this.Hide();
             frm.ShowDialog(this);

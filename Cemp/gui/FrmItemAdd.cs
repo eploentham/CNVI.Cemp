@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
+    /*
+     * 61.05.17 คุณกรณ์ แจ้งแก้ไข ให้จอย แจ้ง แก้โปรแกรม ส่งตรวจกับบริษัท  : ให้เพิ่มได้ btnCusAdd
+     */
     public partial class FrmItemAdd : Form
     {
         CnviControl cc;
@@ -542,6 +545,7 @@ namespace Cemp.gui
 
         private void btnCusAdd_Click(object sender, EventArgs e)
         {
+            //61.05.17
             FrmCusAddS frm = new FrmCusAddS("", cc);
             frm.ShowDialog(this);
             cboCustPO.Items.Clear();

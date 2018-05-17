@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
+    /*
+     * 61.05.17 คุณกรณ์ แจ้งแก้ไข ให้จอย แจ้ง แก้โปรแกรม ส่งตรวจกับบริษัท  
+     */
     public partial class FrmCusAddS : Form
     {
         CnviControl cc;
@@ -69,6 +72,11 @@ namespace Cemp.gui
                 this.Dispose();
                 //this.Hide();
             }
+        }
+
+        private void FrmCusAddS_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

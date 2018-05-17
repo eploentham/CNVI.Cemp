@@ -53,6 +53,7 @@ namespace Cemp
             tv1.Nodes.Add("nPOView", "พิมพ์ ใบสั่งซื้อ");
             tv1.Nodes.Add("nAPView", "หน้าจอ บริหารเจ้าหนี้");
             tv1.Nodes.Add("nARView", "หน้าจอ บริหารลูกหนี้");
+            //tv1.Nodes.Add("nQuotationReport", "หน้าจอ Quotation รายงาน");
             //}
             //if (sf.Priority.Equals("2") || sf.Priority.Equals("3"))
             //{
@@ -200,6 +201,11 @@ namespace Cemp
             {
                 FrmStaffPrefixView frm = new FrmStaffPrefixView(cc);
                 showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nQuotationReport")
+            {
+                //FrmQuotationReport frm = new FrmQuotationReport(cc);
+                //showFrame(frm);
             }
         }
     }

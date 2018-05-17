@@ -132,7 +132,6 @@ D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\Cemp.pdb
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\FlashControlV71.dll
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\ShockwaveFlashObjects.dll
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\stdole.dll
-D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisAdd.resources
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisView.resources
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAP.resources
@@ -187,3 +186,4 @@ D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.csproj.CopyComplete
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.exe
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.pdb
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmCusAddS.resources
+D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuotationReport.resources
