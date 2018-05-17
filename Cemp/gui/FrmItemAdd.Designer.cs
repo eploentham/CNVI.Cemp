@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtValueMax = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtValueMin = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.dgvAdd = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPriceFree = new System.Windows.Forms.TextBox();
@@ -52,7 +56,7 @@
             this.cboDocType = new System.Windows.Forms.ComboBox();
             this.txtPriceCostReal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCusAdd = new System.Windows.Forms.Button();
             this.cboCustPO = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnMethodAdd = new System.Windows.Forms.Button();
@@ -79,10 +83,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtValueMin = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtValueMax = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             this.panel3.SuspendLayout();
@@ -109,7 +109,7 @@
             this.groupBox1.Controls.Add(this.cboDocType);
             this.groupBox1.Controls.Add(this.txtPriceCostReal);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnCusAdd);
             this.groupBox1.Controls.Add(this.cboCustPO);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.btnMethodAdd);
@@ -141,6 +141,44 @@
             this.groupBox1.Size = new System.Drawing.Size(1102, 696);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtValueMax
+            // 
+            this.txtValueMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValueMax.Location = new System.Drawing.Point(108, 494);
+            this.txtValueMax.Name = "txtValueMax";
+            this.txtValueMax.Size = new System.Drawing.Size(398, 22);
+            this.txtValueMax.TabIndex = 151;
+            this.txtValueMax.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(6, 496);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 16);
+            this.label17.TabIndex = 150;
+            this.label17.Text = "MAX :";
+            // 
+            // txtValueMin
+            // 
+            this.txtValueMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValueMin.Location = new System.Drawing.Point(108, 466);
+            this.txtValueMin.Name = "txtValueMin";
+            this.txtValueMin.Size = new System.Drawing.Size(398, 22);
+            this.txtValueMin.TabIndex = 149;
+            this.txtValueMin.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 468);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 16);
+            this.label16.TabIndex = 148;
+            this.label16.Text = "MIN :";
             // 
             // dgvAdd
             // 
@@ -388,14 +426,15 @@
             this.label12.TabIndex = 135;
             this.label12.Text = "ราคาทุน2  :";
             // 
-            // button1
+            // btnCusAdd
             // 
-            this.button1.Location = new System.Drawing.Point(512, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 23);
-            this.button1.TabIndex = 134;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCusAdd.Location = new System.Drawing.Point(512, 254);
+            this.btnCusAdd.Name = "btnCusAdd";
+            this.btnCusAdd.Size = new System.Drawing.Size(37, 23);
+            this.btnCusAdd.TabIndex = 134;
+            this.btnCusAdd.Text = "...";
+            this.btnCusAdd.UseVisualStyleBackColor = true;
+            this.btnCusAdd.Click += new System.EventHandler(this.btnCusAdd_Click);
             // 
             // cboCustPO
             // 
@@ -675,44 +714,6 @@
             this.label1.TabIndex = 101;
             this.label1.Text = "รหัส  yyxxx:";
             // 
-            // txtValueMin
-            // 
-            this.txtValueMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValueMin.Location = new System.Drawing.Point(108, 466);
-            this.txtValueMin.Name = "txtValueMin";
-            this.txtValueMin.Size = new System.Drawing.Size(398, 22);
-            this.txtValueMin.TabIndex = 149;
-            this.txtValueMin.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 468);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(38, 16);
-            this.label16.TabIndex = 148;
-            this.label16.Text = "MIN :";
-            // 
-            // txtValueMax
-            // 
-            this.txtValueMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValueMax.Location = new System.Drawing.Point(108, 494);
-            this.txtValueMax.Name = "txtValueMax";
-            this.txtValueMax.Size = new System.Drawing.Size(398, 22);
-            this.txtValueMax.TabIndex = 151;
-            this.txtValueMax.TabStop = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(6, 496);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 16);
-            this.label17.TabIndex = 150;
-            this.label17.Text = "MAX :";
-            // 
             // FrmItemAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,7 +768,7 @@
         private System.Windows.Forms.Button btnGroupAdd;
         private System.Windows.Forms.Button btnMethodAdd;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCusAdd;
         private System.Windows.Forms.ComboBox cboCustPO;
         private System.Windows.Forms.TextBox txtPriceCostReal;
         private System.Windows.Forms.Label label12;

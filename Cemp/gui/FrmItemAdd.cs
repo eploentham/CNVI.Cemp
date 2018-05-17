@@ -540,6 +540,14 @@ namespace Cemp.gui
             txtPriceCostReal.BackColor = Color.White;
         }
 
+        private void btnCusAdd_Click(object sender, EventArgs e)
+        {
+            FrmCusAddS frm = new FrmCusAddS("", cc);
+            frm.ShowDialog(this);
+            cboCustPO.Items.Clear();
+            cboCustPO = cc.cudb.getCboVendor(cboCustPO);
+        }
+
         private void txtPriceCostReal_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

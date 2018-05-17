@@ -106,6 +106,12 @@
     <Compile Include="gui\FrmCompanyBank.Designer.cs">
       <DependentUpon>FrmCompanyBank.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmCusAddS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCusAddS.Designer.cs">
+      <DependentUpon>FrmCusAddS.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmInvoiceAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -567,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCompanyBank.resx">
       <DependentUpon>FrmCompanyBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCusAddS.resx">
+      <DependentUpon>FrmCusAddS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmInvoiceAdd.resx">
       <DependentUpon>FrmInvoiceAdd.cs</DependentUpon>
