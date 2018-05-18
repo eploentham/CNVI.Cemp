@@ -40,13 +40,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtApprove = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkApprove = new System.Windows.Forms.CheckBox();
             this.cboContact = new System.Windows.Forms.ComboBox();
             this.cboCust = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
             this.pB1 = new System.Windows.Forms.ProgressBar();
-            this.chkApprove = new System.Windows.Forms.CheckBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -186,6 +187,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ค้นหา";
             // 
+            // chkApprove
+            // 
+            this.chkApprove.AutoSize = true;
+            this.chkApprove.Location = new System.Drawing.Point(18, 46);
+            this.chkApprove.Name = "chkApprove";
+            this.chkApprove.Size = new System.Drawing.Size(89, 17);
+            this.chkApprove.TabIndex = 13;
+            this.chkApprove.Text = "อนุมัติแล้ว     ";
+            this.chkApprove.UseVisualStyleBackColor = true;
+            // 
             // cboContact
             // 
             this.cboContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -247,21 +258,23 @@
             this.pB1.Size = new System.Drawing.Size(215, 23);
             this.pB1.TabIndex = 16;
             // 
-            // chkApprove
+            // btnSearch
             // 
-            this.chkApprove.AutoSize = true;
-            this.chkApprove.Location = new System.Drawing.Point(18, 46);
-            this.chkApprove.Name = "chkApprove";
-            this.chkApprove.Size = new System.Drawing.Size(89, 17);
-            this.chkApprove.TabIndex = 13;
-            this.chkApprove.Text = "อนุมัติแล้ว     ";
-            this.chkApprove.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(1175, 10);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(56, 39);
+            this.btnSearch.TabIndex = 17;
+            this.btnSearch.Text = "ค้นหา";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // FrmQuotationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 555);
+            this.ClientSize = new System.Drawing.Size(1242, 555);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.pB1);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.groupBox1);
@@ -309,5 +322,6 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.ProgressBar pB1;
         private System.Windows.Forms.CheckBox chkApprove;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

@@ -300,6 +300,15 @@ namespace Cemp.gui
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                cboContact = cc.qudb.getCbocontact(cboContact, cboCust.Text, cboContact.Text);
+                setGrd();
+            }
+        }
+
         private void FrmQuotationView_Load(object sender, EventArgs e)
         {
 
