@@ -1448,3 +1448,19 @@ Parameter name: length
 11/12/2557 15:53->rpt.setReportMOU OK SetDataSource
 16/12/2557 14:50->rpt.setReportMOU OK 
 16/12/2557 14:51->rpt.setReportMOU OK SetDataSource
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 

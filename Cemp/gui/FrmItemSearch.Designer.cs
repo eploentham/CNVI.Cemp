@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,20 +37,11 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvView = new System.Windows.Forms.DataGridView();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvView
-            // 
-            this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvView.Location = new System.Drawing.Point(11, 56);
-            this.dgvView.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvView.Name = "dgvView";
-            this.dgvView.RowTemplate.Height = 24;
-            this.dgvView.Size = new System.Drawing.Size(975, 462);
-            this.dgvView.TabIndex = 8;
-            this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
             // label1
             // 
@@ -142,11 +132,33 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Qty :";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvView);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 54);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(997, 475);
+            this.panel1.TabIndex = 18;
+            // 
+            // dgvView
+            // 
+            this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvView.Location = new System.Drawing.Point(0, 0);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvView.Name = "dgvView";
+            this.dgvView.RowTemplate.Height = 24;
+            this.dgvView.Size = new System.Drawing.Size(997, 475);
+            this.dgvView.TabIndex = 9;
+            // 
             // FrmItemSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 529);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtQty);
             this.Controls.Add(this.btnSearch);
@@ -156,11 +168,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvView);
             this.Name = "FrmItemSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmItemSearch";
             this.Load += new System.EventHandler(this.FrmItemSearch_Load);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -168,8 +180,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label2;
@@ -179,5 +189,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvView;
     }
 }

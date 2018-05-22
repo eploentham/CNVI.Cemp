@@ -158,7 +158,8 @@ namespace Cemp.objdb
             }
             sql = "Select " + it.Id + "," + it.Code + "," + it.NameT + "," + it.NameE + "," + it.ItemGroupNameT + "," + it.MethodNameT + "," + it.Active + "," + it.Remark + "," + it.PriceSale + 
                 " From " + it.table + 
-                " Where " + whereitnamet + whereitg + wheremeid+" Order By "+it.Code;
+                " Where " + whereitnamet + whereitg + wheremeid+ " and item_active = '1' " +
+                "Order By "+it.Code;
             dt = conn.selectData(sql);
 
             return dt;
