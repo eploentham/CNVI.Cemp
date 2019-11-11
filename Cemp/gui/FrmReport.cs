@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -385,8 +386,13 @@ namespace Cemp
             try
             {
                 cc.lw.WriteLog("rpt.setReportQuotation OK ");
-                rpt.Load(cc.initC.PathReport + "\\QuotationPrint1.rpt");
-                cc.lw.WriteLog("rpt.setReportQuotation OK Load" + cc.initC.PathReport + "\\QuotationPrint1.rpt");
+                if(!File.Exists(cc.initC.PathReport + "\\QuotationPrint2.rpt"))
+                {
+                    MessageBox.Show("File not found", "");
+                    return;
+                }
+                rpt.Load(cc.initC.PathReport + "\\QuotationPrint2.rpt");
+                cc.lw.WriteLog("rpt.setReportQuotation OK Load" + cc.initC.PathReport + "\\QuotationPrint2.rpt");
                 rpt.SetDataSource(dt);
                 cc.lw.WriteLog("rpt.setReportQuotation OK SetDataSource");
                 //rpt.SetDataSource(dt2);
