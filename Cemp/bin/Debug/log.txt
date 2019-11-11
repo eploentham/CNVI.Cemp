@@ -1464,3 +1464,10 @@ Parameter name: length
 5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
 5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
 5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+10-11-2019 6:56 AM->rpt.setReportQuotation OK 
+10-11-2019 6:56 AM->rpt.setReportQuotation Error Load report failed.
+10-11-2019 6:56 AM->rpt.setReportQuotation OK 
+10-11-2019 6:56 AM->rpt.setReportQuotation Error Load report failed.
+10-11-2019 7:15 AM->rpt.setReportQuotation OK 
+10-11-2019 7:15 AM->rpt.setReportQuotation OK LoadD:\source\cnvi\CNVI.Cemp\Cemp\report\QuotationPrint1.rpt
+10-11-2019 7:15 AM->rpt.setReportQuotation OK SetDataSource
