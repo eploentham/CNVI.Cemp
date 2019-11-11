@@ -1464,3 +1464,34 @@ Parameter name: length
 5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
 5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
 5/22/2018 5:05 PM->FrmItemSearch.setGrd Error 
+16/10/2019 10:18 AM->rpt.setReportQuotation OK 
+16/10/2019 10:18 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:18 AM->rpt.setReportQuotation OK 
+16/10/2019 10:19 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:20 AM->rpt.setReportQuotation OK 
+16/10/2019 10:20 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:20 AM->rpt.setReportQuotation OK 
+16/10/2019 10:20 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:20 AM->rpt.setReportQuotation OK 
+16/10/2019 10:25 AM->rpt.setReportQuotation OK 
+16/10/2019 10:25 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:25 AM->rpt.setReportQuotation OK 
+16/10/2019 10:25 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:25 AM->rpt.setReportQuotation OK 
+16/10/2019 10:25 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:26 AM->rpt.setReportQuotation OK 
+16/10/2019 10:27 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:27 AM->rpt.setReportQuotation OK 
+16/10/2019 10:27 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:28 AM->rpt.setReportQuotation OK 
+16/10/2019 10:28 AM->rpt.setReportQuotation Error Load report failed.
+16/10/2019 10:28 AM->rpt.setReportQuotation OK 
+16/10/2019 10:31 AM->rpt.setReportQuotation OK 
+16/10/2019 10:31 AM->rpt.setReportQuotation OK 
+16/10/2019 10:31 AM->rpt.setReportQuotation OK 
+16/10/2019 10:32 AM->rpt.setReportQuotation OK 
+16/10/2019 10:33 AM->rpt.setReportQuotation OK LoadD:\source\CNVI.Cemp\Cemp\report\QuotationPrint2.rpt
+16/10/2019 10:33 AM->rpt.setReportQuotation OK SetDataSource
+16/10/2019 10:34 AM->rpt.setReportQuotation OK 
+16/10/2019 10:34 AM->rpt.setReportQuotation OK LoadD:\source\CNVI.Cemp\Cemp\report\QuotationPrint2.rpt
+16/10/2019 10:34 AM->rpt.setReportQuotation OK SetDataSource
