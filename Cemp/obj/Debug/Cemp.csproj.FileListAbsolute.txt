@@ -204,3 +204,4 @@ D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.ReportAppServer.CubeDef
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojAssemblyReference.cache

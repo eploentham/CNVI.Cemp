@@ -443,7 +443,8 @@ namespace Cemp.gui
         {
             switch (keys)
             {
-                case Keys.F1:
+                //case Keys.F1:
+                case Keys.F | Keys.Control:
                     // ... Process Shift+Ctrl+Alt+B ...
                     //Cursor cursor = Cursor.Current;
                     //Cursor.Current = Cursors.WaitCursor;
@@ -466,8 +467,7 @@ namespace Cemp.gui
                         txtItemQty.Text = cc.itSearch.userCancel;
                         calItemAmount();
                         setItemtoGrd(cc.itSearch.Id, getRow());
-                    }
-                    
+                    }                    
                     //calItemAmount();
                     //btnAdd_Click(null,null);
                     return true; // signal that we've processed this key
