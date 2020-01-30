@@ -61,12 +61,14 @@ namespace Cemp.Properties {
         }
         
         /// <summary>
+
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo {
+        internal static System.Drawing.Icon clinic_ivf_donor {
             get {
-                object obj = ResourceManager.GetObject("Logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("clinic_ivf_donor", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+
             }
         }
     }

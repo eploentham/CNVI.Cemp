@@ -186,6 +186,8 @@ D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.exe
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.pdb
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmCusAddS.resources
 D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuotationReport.resources
+D:\source\cnvi\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojAssemblyReference.cache
+D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\Cemp.ini
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 D:\source\cnvi\CNVI.Cemp\Cemp\bin\Debug\CrystalDecisions.ReportSource.dll
